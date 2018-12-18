@@ -49,7 +49,7 @@ module LuoSiO(_x) {
 }
 
 /* ×°Åä */
-linear_extrude(height=4, center=true, convexity=10, twist=0)
+// linear_extrude(height=4, center=true, convexity=10, twist=0)
 difference()
 {
 	union()
