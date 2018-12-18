@@ -25,17 +25,19 @@ module LuoSiO(_x) {
 }
 
 
-// linear_extrude(height=4, center=true, convexity=10, twist=0)
-difference()
-{
-	union()
+module UZhuanJie() {
+	// linear_extrude(height=4, center=true, convexity=10, twist=0)
+	difference()
 	{
-		circle($fn=40,d=wU);
-		translate([0, (hU-wU/2)/2, 0]) square(size=[wU, hU-wU/2], center=true);
+		union()
+		{
+			circle($fn=40,d=wU);
+			translate([0, (hU-wU/2)/2, 0]) square(size=[wU, hU-wU/2], center=true);
+		}
+		translate([0, hU-wU/2, 0]) {
+			LuoSiT(lT/2);
+			LuoSiT(-lT/2);
+		}
+		translate([0,-hU/5]) LuoSiO(0);
 	}
-	translate([0, hU-wU/2, 0]) {
-		LuoSiT(lT/2);
-		LuoSiT(-lT/2);
-	}
-	translate([0,-hU/5]) LuoSiO(0);
 }

@@ -49,24 +49,26 @@ module LuoSiO(_x) {
 }
 
 /* ×°Åä */
-// linear_extrude(height=4, center=true, convexity=10, twist=0)
-difference()
-{
-	union()
+module HuoSai() {
+	// linear_extrude(height=4, center=true, convexity=10, twist=0)
+	difference()
 	{
-		HuaCao_mod(d/2 + tick);
-		Gan();
-	}
-	HuaCao_mod(d/2);
-	// for (i=[1:2:6]) {
-	// 	LuoSiT(L - i*LSxd);
-	// }
-	// for (i=[0:1:7]) {
-	// 	LuoSiO(L - i*LSxd);
-	// }
-	hull()
-	{
-		LuoSiO(L-LSxd);
-		LuoSiO(L-7*LSxd);
+		union()
+		{
+			HuaCao_mod(d/2 + tick);
+			Gan();
+		}
+		HuaCao_mod(d/2);
+		// for (i=[1:2:6]) {
+		// 	LuoSiT(L - i*LSxd);
+		// }
+		// for (i=[0:1:7]) {
+		// 	LuoSiO(L - i*LSxd);
+		// }
+		hull()
+		{
+			LuoSiO(L-LSxd);
+			LuoSiO(L-7*LSxd);
+		}
 	}
 }
